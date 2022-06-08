@@ -6,8 +6,10 @@ import (
 	"log"
 	"net"
 
-	"google.golang.org/grpc"
+	"books_grpc/database"
 	"books_grpc/service"
+
+	"google.golang.org/grpc"
 )
 
 const port = ":50051"
@@ -21,7 +23,7 @@ func main() {
 
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
-		log.Fatal("Failed to listen0: ", err)
+		log.Fatal("Failed to listen database: ", err)
 	}
 
 	//Initialize new Server
